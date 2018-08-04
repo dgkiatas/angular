@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./test.component.css']
 })
 export class TestComponent implements OnInit {
-  name = "Jim";
+  private name = "Jim";
+  private greeting = "";
   successClass="text-success text-special";
   specialClass="text-special";
   hasError=false;
@@ -25,7 +26,10 @@ export class TestComponent implements OnInit {
 
   ngOnInit() {
   }
-  
+  onClick(event) {
+    console.log(event);
+    this.greeting="Welcom my friend " + this.name;
+  }
     
   
 
