@@ -7,13 +7,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TestComponent implements OnInit {
   name = "Jim";
-  siteURL = window.location.href;
+  successClass="text-success text-special";
+  specialClass="text-special";
+  hasError=false;
+  isSpecial = false;
+  messageClasses={
+    "text-success": !this.hasError,
+    "text-danger": this.hasError,
+    "text-special": this.isSpecial
+  }
+  highlightColor = "orange";
+  titleStyles = {
+    color: "blue",
+    fontStyle : "italic"
+  }
   constructor() { }
 
   ngOnInit() {
   }
-  greetUser() {
-    return "hello ma " + this.name;
-  }
+  
+    
+  
 
 }
